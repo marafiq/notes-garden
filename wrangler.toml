@@ -8,3 +8,4 @@ zone_id = ""
 [site]
 bucket = "./public"
 entry-point = "workers-site"
+[env.production]
