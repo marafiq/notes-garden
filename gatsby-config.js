@@ -2,8 +2,24 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-blog`,
+      
       options: {},
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+      },
+    }
   ],
   // Customize your site metadata:
   siteMetadata: {
