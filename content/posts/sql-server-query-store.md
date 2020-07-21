@@ -6,9 +6,15 @@ Query Store allows you to monitor and troubleshoot queries. It also provides sta
 
 Enable Query Store with default configuration using below SQL. It is enabled at database level.
 ~~~ SQL
-USE DatabaseName
+ALTER DATABASE DatabaseName
 SET QUERY_STORE = ON ( WAIT_STATS_CAPTURE_MODE = ON );
 ~~~ 
+
+Query Store is enabled at database level. It can not be enabled on master & tempdb. 
+
+Once you run the above script. You should see a node under your database named 'Query Store'.
+
+![Non-Pool Benchmark](../assets/QueryStore-Interactive-Reports-with-handy-options.png)
 
 **Use Case 01 - Query Performance Regression with Audit Query Plan History**
 
