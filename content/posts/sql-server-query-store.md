@@ -10,12 +10,22 @@ ALTER DATABASE DatabaseName
 SET QUERY_STORE = ON ( WAIT_STATS_CAPTURE_MODE = ON );
 ~~~ 
 
-Query Store is enabled at database level. It can not be enabled on master & tempdb. 
+Query Store is enabled at database level. It can not be enabled on master & tempdb. It collects data in asynchronous. 
 
 Once you run the above script. You should see a node under your database named 'Query Store'.
 
-![Non-Pool Benchmark](../assets/QueryStore-Interactive-Reports-with-handy-options.png)
+Query Store Interactive Reports
 
+![Query Store View](../assets/QueryStore-Interactive-Reports-with-handy-options.png)
+
+Query Store Views
+
+![Query Store Views](../assets/querystore-views.png)
+
+Query Stores Options can be queries.
+~~~ SQL
+SELECT * FROM sys.database_query_store_options;
+~~~
 **Use Case 01 - Query Performance Regression with Audit Query Plan History**
 
 A new release is deployed. Everyone is happy untill SQL Server is acting up. Because one of the query has gone crazy. But it does not act crazy all the time. 
