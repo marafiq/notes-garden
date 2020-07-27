@@ -8,7 +8,8 @@ SQL Server Enterprise offers scalable memory optimized relational tables. Yes, a
 - Durable - Offers ACID 
 - Non-Durable 
 
-In-Memory table(s) are relational tables. Only difference is data is reterieved from memory than from disk. Which can significantly reduce your resource consumption & speed.
+In-Memory table(s) are relational tables. Only difference is data is reterieved from memory than from disk. Which can significantly reduce your resource consumption (dramatically) & speed by 30X. 
+[Table & Row Size - see this](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/table-and-row-size-in-memory-optimized-tables?view=sql-server-ver15)
 
 If you use Entity Framework to query your datbase. You do not need to do anything special about how you manipulate data. It works perfectly.
 
