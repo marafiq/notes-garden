@@ -1,5 +1,5 @@
 ---
-title: SQL Server Query Store - Performance Monitoring and Troubleshooting Queries
+title: SQL Server Query Store Overview 
 date: 2020-07-27
 ---
 Query Store allows you to monitor and troubleshoot queries. It also provides stats about runtime such as CPU, IO and Memory.
