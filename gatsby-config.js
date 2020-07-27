@@ -25,7 +25,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
       },
-    }
+    },
   ],
   // Customize your site metadata:
   siteMetadata: {

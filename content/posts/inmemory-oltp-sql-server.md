@@ -12,12 +12,31 @@ In-Memory table(s) are relational tables. Only difference is data is reterieved 
 
 If you use Entity Framework to query your datbase. You do not need to do anything special about how you manipulate data. It works perfectly.
 
-I wrote a sample app here - [In-Memory SQL App ](https://github.com/marafiq/PerformanceBoostWithSqlServer/blob/master/PerformanceBoostWithSqlServer/Program.cs)
+I wrote a sample app here - [In-Memory SQL App ](https://github.com/marafiq/PerformanceBoostWithSqlServer/blob/master/PerformanceBoostWithSqlServer/Program.cs) 
 
 In EF Code First approach, you have to have specific `IsMemoryOptimized`.
 
-```
-https://github.com/marafiq/PerformanceBoostWithSqlServer/blob/e02db81f0c5d6f4363a57deaf796de15161a641e/PerformanceBoostWithSqlServer/Program.cs#L117
+``` C#
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Course>().IsMemoryOptimized();
+        
+        //modelBuilder.Entity<Course>().HasMany<CourseEnrollment>().WithOne(x => x.Course);
+
+        modelBuilder.Entity<Person>().ToTable("Persons").HasDiscriminator<PersonRole>(nameof(Person.Role)).HasValue<Student>(PersonRole.Student).HasValue<Teacher>(PersonRole.Teacher);
+        
+        //modelBuilder.Entity<Person>().HasMany<CourseEnrollment>().WithOne(x => x.Student);
+
+        modelBuilder.Entity<Person>().IsMemoryOptimized();
+        modelBuilder.Entity<Student>().IsMemoryOptimized();
+        modelBuilder.Entity<Teacher>().IsMemoryOptimized();
+
+        modelBuilder.Entity<CourseEnrollment>().HasKey(x => new { x.CourseId, x.StudentId });
+        
+        modelBuilder.Entity<CourseEnrollment>().IsMemoryOptimized();
+
+    }
+
 ```
 
 
