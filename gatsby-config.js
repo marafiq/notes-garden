@@ -26,7 +26,7 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
-g    {
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
