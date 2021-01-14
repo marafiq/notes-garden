@@ -87,6 +87,16 @@ GO
 Now expan Query Store node under your database in SQL Server Studio. And click on Regressed Queries. You should be able to see report.
 ![Regressed Queries Report](../assets/regressed-queries.png)
 
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
 
 
 
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMzIxMjk5MzU0XX0=
+-->
